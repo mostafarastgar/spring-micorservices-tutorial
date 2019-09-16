@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          consumer:
+            concurrency: 2
+            partitioned: true
+          group: balancechecker
+          destination: balance-check
+          contentType: application/json;charset=UTF-8
+      kafka:
+        binder:
+          brokers: 192.168.160.9:9092,192.168.160.9:9093,192.168.160.9:9094
+          autoCreateTopics: true
+kafka:
+  partitions:
+    MELIIRTHXXX: 0
+    AYBKIRTHXXX: 1
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:2020/eureka
+ribbon:
+  ServerListRefreshInterval: 10000
+  MaxAutoRetriesNextServer: 2
+  MaxAutoRetries: 1
+  OkToRetryOnAllOperations: true
+  ConnectTimeout: 3000
+  ReadTimeout: 3000

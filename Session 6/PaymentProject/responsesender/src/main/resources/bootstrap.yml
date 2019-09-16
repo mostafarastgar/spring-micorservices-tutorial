@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: response-sender
+  cloud:
+    config:
+      uri: http://localhost:7070
+server:
+  port: 8080

@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          producer:
+            partitionCount: 2
+          destination: balance-check
+          contentType: application/json;charset=UTF-8
+      kafka:
+        binder:
+          brokers: 192.168.160.9:9092,192.168.160.9:9093,192.168.160.9:9094
+          autoCreateTopics: true
+kafka:
+  partitions:
+    MELIIRTHXXX: 0
+    AYBKIRTHXXX: 1
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:2020/eureka

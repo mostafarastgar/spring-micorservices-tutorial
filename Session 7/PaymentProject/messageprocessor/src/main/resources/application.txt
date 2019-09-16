@@ -1,0 +1,13 @@
+eureka.client.serviceUrl.defaultZone=http://admin:admin@localhost:2020/eureka
+eureka.client.healthcheck.enabled=true
+#eureka.instance.lease-renewal-interval-in-seconds=5
+#eureka.instance.lease-expiration-duration-in-seconds=6
+#following configurations can start with [service name] such as message-validator,
+#  to make them sepecific only when using related service
+ribbon.ServerListRefreshInterval=10000
+ribbon.MaxAutoRetriesNextServer=2
+ribbon.MaxAutoRetries=1
+ribbon.OkToRetryOnAllOperations=true
+ribbon.ConnectTimeout=3000
+ribbon.ReadTimeout=3000
+test.data=from local
